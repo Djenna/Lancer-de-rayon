@@ -36,6 +36,7 @@ int main()
         				//Position de la caméra
         				case 0:
         					//Remplir les données de la caméra
+
         					cout<< numLigne << "  "<<ligne<<endl;
         					numLigne++;
     						break;
