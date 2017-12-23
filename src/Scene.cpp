@@ -11,8 +11,12 @@
 
 #include "Scene.hpp"
 
+using namespace std;
 
+Scene :: Scene()
+{
 
+}
 
 
 

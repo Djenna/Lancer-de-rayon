@@ -7,6 +7,15 @@
 
 #include <iostream>
 #include "Objet3D.hpp"
+#include "Position.hpp"
 
+Objet3D::Objet3D()
+{
 
+}
+
+Objet3D::Objet3D(Position _p): centre(_p)
+{
+
+}
 

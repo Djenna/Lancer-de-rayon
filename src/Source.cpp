@@ -8,7 +8,11 @@
 #include "Source.hpp"
 
 
-Source::Source(Position _p, ColorRGB _c): p(_p), couleur(_c)
+Source::Source(Position _p, ColorRGB _c): position(_p), couleur(_c)
+{
+
+}
+Source :: Source()
 {
 
 }

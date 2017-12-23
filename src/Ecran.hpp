@@ -7,6 +7,7 @@
 
 
 #include "Position.hpp"
+#include "ColorRGB.hpp"
 
 #ifndef ECRAN_HPP_
 #define ECRAN_HPP_
@@ -18,6 +19,9 @@ private:
 	Position trc;//Top Right Corner
 	Position blc;//Bottom Left Corner
 	Position brc;//Bottom Right Corner
+	int horizontaleRes;
+	int verticaleRes;
+	ColorRGB background;
 
 public:
 	Ecran();
@@ -54,6 +58,30 @@ public:
 
 	void setTrc(const Position& trc) {
 		this->trc = trc;
+	}
+
+	void setHorizontaleRes(int horizontaleRes) {
+		this->horizontaleRes = horizontaleRes;
+	}
+
+	void setVerticaleRes(int verticaleRes) {
+		this->verticaleRes = verticaleRes;
+	}
+
+	int getHorizontaleRes() const {
+		return horizontaleRes;
+	}
+
+	int getVerticaleRes() const {
+		return verticaleRes;
+	}
+
+	const ColorRGB& getBackground() const {
+		return background;
+	}
+
+	void setBackground(const ColorRGB& background) {
+		this->background = background;
 	}
 };
 

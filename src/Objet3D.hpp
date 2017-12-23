@@ -9,17 +9,20 @@
 class Objet3D{
 
 	private:
-		Position p;
+		Position centre;
 	public:
 		Objet3D();
-		Objet3D(Position p);
+		Objet3D(Position centre);
 		//virtual ~Objet3D();
 
 	//SETTERS-GETTERS
-	//A faire pour toutes les coordonnées
-	void setPosition(Position p);
 
-	//int getx();
+	const Position& getPosition() const {
+		return centre;
+	}
 
-	};
+	void setPosition(const Position& position) {
+		this->centre = position;
+	}
+};
 

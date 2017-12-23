@@ -16,7 +16,7 @@ class Source
 {
 
 private:
-	Position p;
+	Position position;
 	ColorRGB couleur;
 
 public:
@@ -32,12 +32,12 @@ public:
 		this->couleur = couleur;
 	}
 
-	const Position& getP() const {
-		return p;
+	const Position& getPosition() const {
+		return position;
 	}
 
-	void setP(const Position& p) {
-		this->p = p;
+	void setPosition(const Position& p) {
+		this->position = p;
 	}
 };
 

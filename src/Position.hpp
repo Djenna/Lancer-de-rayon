@@ -10,12 +10,12 @@
 
 class Position{
 
-	private:
-		int x;
-		int y;
-		int z;
-
 	public:
+	int x;
+	int y;
+	int z;
+
+
 	Position();
 	Position(int x, int y, int z);
 

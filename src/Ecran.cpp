@@ -11,5 +11,8 @@
 
 #include "Ecran.hpp"
 
+Ecran :: Ecran()
+{
 
+}
 

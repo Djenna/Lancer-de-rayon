@@ -6,3 +6,14 @@
  */
 
 #include "Sphere.hpp"
+#include "Position.hpp"
+
+Sphere::Sphere()
+{
+
+}
+
+Sphere::Sphere(Position centre): Objet3D(centre)
+{
+
+}
