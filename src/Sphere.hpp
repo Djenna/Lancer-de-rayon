@@ -5,8 +5,9 @@
  *      Author: Djenna
  */
 #include "Position.hpp"
-#include "Objet3D.hpp"
 #include "ColorRGB.hpp"
+#include "Rayon.hpp"
+#include "Objet3D.hpp"
 
 
 
@@ -19,7 +20,8 @@ class Sphere : public Objet3D{
 		double reflexion;
 		Sphere();
 		Sphere(Position centre);
-		//virtual ~Position();
+		Sphere(const Position& centre, double rayon, const ColorRGB& color, double reflexion);
+		~Sphere();
 
 	//SETTERS-GETTERS
 
@@ -54,5 +56,9 @@ class Sphere : public Objet3D{
 	void setReflexion(double reflexion) {
 		this->reflexion = reflexion;
 	}
+
+	//Methodes membres
+	bool intercepte(const Rayon& rayonI);
+
 };
 

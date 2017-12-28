@@ -19,3 +19,8 @@ Objet3D::Objet3D(Position _p): centre(_p)
 
 }
 
+Objet3D::~Objet3D()
+{
+
+}
+

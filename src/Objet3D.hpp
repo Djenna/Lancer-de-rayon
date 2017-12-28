@@ -5,6 +5,7 @@
  *      Author: Djenna
  */
 #include "Position.hpp"
+#include "Rayon.hpp"
 
 class Objet3D{
 
@@ -13,7 +14,9 @@ class Objet3D{
 	public:
 		Objet3D();
 		Objet3D(Position centre);
-		//virtual ~Objet3D();
+		virtual ~Objet3D();
+
+		virtual bool intercepte(const Rayon& rayon) = 0;
 
 	//SETTERS-GETTERS
 
@@ -25,4 +28,3 @@ class Objet3D{
 		this->centre = position;
 	}
 };
-

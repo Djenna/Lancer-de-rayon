@@ -8,6 +8,7 @@
 #include "Ecran.hpp"
 #include "Source.hpp"
 #include "Sphere.hpp"
+#include "Camera.hpp"
 #include <vector>
 
 #ifndef SCENE_HPP_
@@ -21,6 +22,7 @@ class Scene
 		std::vector<Sphere> sesSpheres; //Liste des sphères contenues dans la scène
 		Ecran sonEcran;
 		Source saSource;
+		Camera saCamera;
 	public:
 		Scene();
 		//virtual ~Scene(){};
@@ -48,7 +50,23 @@ class Scene
 	void setSonEcran(const Ecran& sonEcran) {
 		this->sonEcran = sonEcran;
 	}
+
+	const Camera& getSaCamera() const {
+		return saCamera;
+	}
+
+	void setSaCamera(const Camera& saCamera) {
+		this->saCamera = saCamera;
+	}
+
+	/**
+	 * Surchage de l'operateur d'affichage pour la scene
+	 */
+	friend ostream& operator<<(ostream& os, const Scene& scene);
+
 };
+
+
 
 
 

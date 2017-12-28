@@ -12,14 +12,14 @@
 
 #include "Scene.hpp"
 #include "Camera.hpp"
+#include "Parser.hpp"
+#include "Image.hpp"
 
 using namespace std;
 
 #define NBMINELT 8
 
-/**
- * Cette methode decoupe la ligne, en fonction d'un delimitateur, en plusieurs token.
- */
+
 vector<string> split(const string& str, const string& delim)
 {
     vector<string> tokens;
@@ -36,9 +36,7 @@ vector<string> split(const string& str, const string& delim)
     return tokens;
 }
 
-/**
- * Cette methode verifie que la ligne contient bien le nombre d'arguments voulu et qu'il s'agit uniquement de nombres
- */
+
 bool verification(const vector<string> ligne, int nbArgument)
 {
 	if(ligne.size()!=nbArgument)
@@ -59,9 +57,7 @@ bool verification(const vector<string> ligne, int nbArgument)
 
 }
 
-/**
- * Méthode pour enlever la virgule, positionnee à la fin d'une chaine
- */
+
 bool enleverVirgule(string& str)
 {
 	str[str.size()-1] = 0;
@@ -165,6 +161,7 @@ Scene ecritureScene(string const chemin)
 								position.y = stoi (res[1]);
 								position.z = stoi (res[2]);
 								camera.setSaPosition(position);
+								scene.setSaCamera(camera);
 
 							}
 							else
@@ -333,7 +330,6 @@ Scene ecritureScene(string const chemin)
 	            						scene.getSesSpheres().push_back(sphere);
 
 	           						}
-
 	               					else
 	               					{
 	               						cerr <<"Les arguments sur d'un objet de la scene ne sont pas conformes ! \n"<< endl;
@@ -343,7 +339,6 @@ Scene ecritureScene(string const chemin)
 	           					{
 	           						cerr << "Le type : " << res[0] << "n'est pas accepte  ! \n" << endl;
 	           					}
-	        					cout<<ligne<<endl;
 	        					numLigne++;
 	        			}
 
@@ -377,11 +372,14 @@ int main()
 	cin >> chemin;
 
 	//On cree la scene
-	checkLigne(chemin);
 	Scene scene = ecritureScene(chemin);
 
+	// Affichage de la scene
+	cout << scene << endl;
 
-
+	//Creation de l'image de sortie
+	Image i(scene.getSonEcran().getHorizontaleRes(), scene.getSonEcran().getHorizontaleRes());
+	i.creationImage();
 }
 
 
